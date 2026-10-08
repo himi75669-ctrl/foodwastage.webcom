@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodGuard AI — Save Food. Share Hope.</title>
+  <meta name="description" content="FoodGuard AI is an intelligent surplus food tracking and redistribution prototype aligned with SDG 2 (Zero Hunger) and SDG 12 (Responsible Consumption).">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Toast Notification System -->
+  <div id="toast" class="toast" role="alert" aria-live="polite">
+    <div class="toast-icon" id="toastIcon"><i class="fa-solid fa-circle-check"></i></div>
+    <div class="toast-content">
+      <h4 id="toastTitle">Success</h4>
+      <p id="toastMessage">Action completed successfully.</p>
+    </div>
+    <button class="toast-close" id="toastClose" aria-label="Close notification">&times;</button>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" aria-label="FoodGuard AI Home">
+        <span class="logo-icon-wrap">
+          <i class="fa-solid fa-leaf"></i>
+          <span class="logo-shield"><i class="fa-solid fa-shield-halved"></i></span>
+        </span>
+        <span class="logo-text">FoodGuard <span class="logo-ai">AI</span></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#problem" class="nav-link">Why Care?</a></li>
+          <li><a href="#tracker" class="nav-link">Food Tracker</a></li>
+          <li><a href="#donate" class="nav-link">Donate Food</a></li>
+          <li><a href="#safety" class="nav-link">Safety AI</a></li>
+          <li><a href="#impact" class="nav-link">Impact</a></li>
+          <li><a href="#organizations" class="nav-link">Organizations</a></li>
+          <li><a href="#sdg" class="nav-link">SDGs</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+        <div class="nav-cta-wrap">
+          <a href="#donate" class="btn btn-sm btn-primary">
+            <i class="fa-solid fa-hand-holding-heart"></i> Donate Now
+          </a>
+        </div>
+      </nav>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="hero-bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge hero-badge">
+            <span class="pulse-dot"></span>
+            <span>Hackathon Prototype &bull; SDG 2 &amp; SDG 12 Aligned</span>
+          </div>
+          <h1 class="hero-title">
+            Save Food. <br>
+            <span class="text-gradient">Share Hope.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Turn surplus food into meaningful impact with FoodGuard AI. We empower hostels, hotels, restaurants, and households to track unavoidable food waste, verify freshness, and seamlessly bridge surplus food to nearby food rescue organizations.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#tracker" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-chart-pie"></i> Track Food Waste
+            </a>
+            <a href="#donate" class="btn btn-secondary btn-lg">
+              <i class="fa-solid fa-gift"></i> Donate Surplus Food
+            </a>
+          </div>
+
+          <div class="hero-highlights">
+            <div class="highlight-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Zero Complicated Setup</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-bolt"></i>
+              <span>Instant NGO Alerting</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-shield-virus"></i>
+              <span>Food Safety AI Guard</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-stack">
+            <div class="hero-main-card">
+              <div class="card-glass-header">
+                <div class="glass-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="glass-tag"><i class="fa-solid fa-satellite-dish"></i> Live Network Activity</span>
+              </div>
+              <div class="hero-card-body">
+                <div class="live-activity-preview">
+                  <div class="activity-avatar bg-mint">
+                    <i class="fa-solid fa-utensils"></i>
+                  </div>
+                  <div class="activity-details">
+                    <strong>GreenTree Hotel &amp; Banquets</strong>
+                    <p>Listed 35 kg fresh biryani &amp; curry &bull; 4 mins ago</p>
+                  </div>
+                  <span class="status-pill status-ready">Available</span>
+                </div>
+
+                <div class="live-activity-preview">
+                  <div class="activity-avatar bg-amber">
+                    <i class="fa-solid fa-truck-fast"></i>
+                  </div>
+                  <div class="activity-details">
+                    <strong>Hope Community Kitchen</strong>
+                    <p>Pickup claimed &bull; 140 meals dispatched</p>
+                  </div>
+                  <span class="status-pill status-transit">In Transit</span>
+                </div>
+
+                <div class="live-activity-preview">
+                  <div class="activity-avatar bg-emerald">
+                    <i class="fa-solid fa-heart-circle-check"></i>
+                  </div>
+                  <div class="activity-details">
+                    <strong>Hostel Block A Mess</strong>
+                    <p>Logged 18 kg avoided &bull; Target met</p>
+                  </div>
+                  <span class="status-pill status-done">Redistributed</span>
+                </div>
+              </div>
+              <div class="hero-card-footer">
+                <div class="mini-stat">
+                  <small>Today's Rescued Meals</small>
+                  <strong>420+ Servings</strong>
+                </div>
+                <div class="mini-stat">
+                  <small>Carbon Avoided</small>
+                  <strong>~575 kg CO₂e</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Badges -->
+            <div class="floating-chip chip-top">
+              <i class="fa-solid fa-wheat-awn-circle-exclamation text-warning"></i>
+              <div>
+                <strong>SDG 2.1</strong>
+                <small>Zero Hunger Target</small>
+              </div>
+            </div>
+            <div class="floating-chip chip-bottom">
+              <i class="fa-solid fa-recycle text-success"></i>
+              <div>
+                <strong>SDG 12.3</strong>
+                <small>Responsible Waste Target</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PROBLEM SECTION -->
+    <section class="section section-problem" id="problem">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-kicker">The Global &amp; Local Challenge</span>
+          <h2 class="section-title">Why Food Waste Matters</h2>
+          <p class="section-subtitle">
+            While roughly one-third of all food produced globally goes to waste, millions go to sleep hungry. The issue isn't lack of food — it's the absence of efficient local tracking and rescue channels.
+          </p>
+        </div>
+
+        <div class="problem-grid">
+          <!-- Card 1 -->
+          <div class="problem-card">
+            <div class="problem-icon-wrap icon-red">
+              <i class="fa-solid fa-trash-can"></i>
+            </div>
+            <h3>Edible Food Wasted Daily</h3>
+            <p>
+              Tons of wholesome, freshly prepared food are discarded every single day simply because there is no fast, organized bridge between surplus kitchens and hungry individuals.
+            </p>
+            <div class="problem-stat-badge">
+              <i class="fa-solid fa-arrow-trend-up"></i> Over 1.3 Billion tons lost annually
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="problem-card">
+            <div class="problem-icon-wrap icon-orange">
+              <i class="fa-solid fa-hotel"></i>
+            </div>
+            <h3>Surplus in Hospitality &amp; Hostels</h3>
+            <p>
+              Restaurants, corporate cafeterias, college hostel messes, and wedding banquet halls prepare in bulk. Fluctuating attendance results in predictable, high-volume leftovers.
+            </p>
+            <div class="problem-stat-badge">
+              <i class="fa-solid fa-clock-rotate-left"></i> Peak surplus between 2 PM - 10 PM
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="problem-card">
+            <div class="problem-icon-wrap icon-purple">
+              <i class="fa-solid fa-link-slash"></i>
+            </div>
+            <h3>Broken Distribution Bridge</h3>
+            <p>
+              Local charities, shelter homes, and NGOs desperately need daily meals, yet donors lack reliable contacts, verified transport, or clear safety check tools before donating.
+            </p>
+            <div class="problem-stat-badge">
+              <i class="fa-solid fa-circle-exclamation"></i> 80% never reaches local NGOs
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="problem-card">
+            <div class="problem-icon-wrap icon-blue">
+              <i class="fa-solid fa-droplet-slash"></i>
+            </div>
+            <h3>Hidden Resource Drain</h3>
+            <p>
+              Throwing away food also throws away the fresh water, fossil energy, land labor, and economic capital used to produce it, while rotting food generates harmful methane in landfills.
+            </p>
+            <div class="problem-stat-badge">
+              <i class="fa-solid fa-seedling"></i> 250 Trillion liters of water wasted
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem Solution Bridge Callout -->
+        <div class="solution-callout">
+          <div class="callout-icon">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <div class="callout-text">
+            <h4>The FoodGuard AI Paradigm</h4>
+            <p>We transform this silent crisis into a <strong>closed-loop community opportunity</strong>: Track unavoidable waste to improve future meal planning, and divert immediate surplus directly to verified community distribution partners.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FOOD WASTE TRACKER SECTION -->
+    <section class="section section-tracker" id="tracker">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-kicker">Operational Intelligence</span>
+          <h2 class="section-title">Food Waste Tracker</h2>
+          <p class="section-subtitle">
+            Log unavoidable kitchen surplus or plate waste. Use empirical data to eliminate over-prep routines and monitor reductions over time.
+          </p>
+        </div>
+
+        <div class="tracker-layout">
+          <!-- Tracker Form -->
+          <div class="tracker-form-card">
+            <div class="card-header-styled">
+              <div class="card-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+              <div>
+                <h3>Record Waste Entry</h3>
+                <p>Log details to update your facility's real-time metrics.</p>
+              </div>
+            </div>
+
+            <form id="wasteTrackerForm" class="styled-form" novalidate>
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <label for="foodName"><i class="fa-solid fa-bowl-rice"></i> Food Item Name *</label>
+                  <input type="text" id="foodName" name="foodName" placeholder="e.g. Mixed Veg Pulav, Bread" required>
+                  <span class="form-error">Please specify food item name.</span>
+                </div>
+                <div class="form-group col-6">
+                  <label for="foodCategory"><i class="fa-solid fa-tags"></i> Food Category *</label>
+                  <select id="foodCategory" name="foodCategory" required>
+                    <option value="" disabled selected>Select category</option>
+                    <option value="Cooked Meals">Cooked Meals (Rice, Curries, Rotis)</option>
+                    <option value="Bakery & Pastry">Bakery &amp; Bread</option>
+                    <option value="Fresh Produce">Raw Vegetables &amp; Fruits</option>
+                    <option value="Dairy Products">Milk, Paneer, Curd</option>
+                    <option value="Packaged Foods">Sealed / Packaged Groceries</option>
+                  </select>
+                  <span class="form-error">Please select a food category.</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <label for="quantityKg"><i class="fa-solid fa-weight-scale"></i> Quantity (in kg) *</label>
+                  <input type="number" id="quantityKg" name="quantityKg" min="0.5" step="0.5" placeholder="e.g. 12.5" required>
+                  <span class="form-error">Enter a valid weight in kg (&gt; 0).</span>
+                </div>
+                <div class="form-group col-6">
+                  <label for="wasteDate"><i class="fa-regular fa-calendar"></i> Date *</label>
+                  <input type="date" id="wasteDate" name="wasteDate" required>
+                  <span class="form-error">Please select a date.</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <label for="wasteReason"><i class="fa-solid fa-circle-question"></i> Reason for Waste *</label>
+                  <select id="wasteReason" name="wasteReason" required>
+                    <option value="" disabled selected>Select reason</option>
+                    <option value="Over-Preparation">Over-preparation / Excess batch</option>
+                    <option value="Expired / Past Shelf Life">Shelf life expired</option>
+                    <option value="Plate Scrapings">Plate waste / Unfinished servings</option>
+                    <option value="Cold Chain Failure">Storage / Refrigeration breakdown</option>
+                    <option value="Event Cancellation">Event attendance shortfall</option>
+                  </select>
+                  <span class="form-error">Select a waste reason.</span>
+                </div>
+                <div class="form-group col-6">
+                  <label for="wasteLocation"><i class="fa-solid fa-location-dot"></i> Source Location *</label>
+                  <input type="text" id="wasteLocation" name="wasteLocation" placeholder="e.g. Hostel Mess B, Main Dining Hall" required>
+                  <span class="form-error">Please enter source location.</span>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-block">
+                  <i class="fa-solid fa-floppy-disk"></i> Record Food Waste
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Tracker Side Summary & Live Table -->
+          <div class="tracker-summary-col">
+            <div class="tracker-metrics-grid">
+              <div class="metric-card">
+                <div class="metric-icon-box bg-emerald-soft">
+                  <i class="fa-solid fa-box-archive text-emerald"></i>
+                </div>
+                <div class="metric-info">
+                  <span class="metric-label">Total Food Saved</span>
+                  <div class="metric-val"><span id="metricSaved">250</span> <small>kg</small></div>
+                  <span class="metric-trend trend-positive"><i class="fa-solid fa-arrow-trend-up"></i> +14% this week</span>
+                </div>
+              </div>
+
+              <div class="metric-card">
+                <div class="metric-icon-box bg-teal-soft">
+                  <i class="fa-solid fa-arrow-down-wide-short text-teal"></i>
+                </div>
+                <div class="metric-info">
+                  <span class="metric-label">Food Waste Reduced</span>
+                  <div class="metric-val"><span id="metricReduced">180</span> <small>kg</small></div>
+                  <span class="metric-trend trend-positive"><i class="fa-solid fa-leaf"></i> -22% landfill diverted</span>
+                </div>
+              </div>
+
+              <div class="metric-card">
+                <div class="metric-icon-box bg-amber-soft">
+                  <i class="fa-solid fa-hand-holding-heart text-amber"></i>
+                </div>
+                <div class="metric-info">
+                  <span class="metric-label">Donations Completed</span>
+                  <div class="metric-val"><span id="metricDonations">75</span> <small>trips</small></div>
+                  <span class="metric-trend trend-positive"><i class="fa-solid fa-users"></i> 14 partner shelters</span>
+                </div>
+              </div>
+
+              <div class="metric-card">
+                <div class="metric-icon-box bg-rose-soft">
+                  <i class="fa-solid fa-utensils text-rose"></i>
+                </div>
+                <div class="metric-info">
+                  <span class="metric-label">Estimated Meals Supported</span>
+                  <div class="metric-val"><span id="metricMeals">420</span> <small>meals</small></div>
+                  <span class="metric-trend trend-positive"><i class="fa-solid fa-heart"></i> Direct nutritional aid</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Entries Table -->
+            <div class="recent-logs-card">
+              <div class="recent-logs-header">
+                <h4><i class="fa-solid fa-clock-rotate-left"></i> Real-time Log Feed</h4>
+                <span class="badge badge-sm badge-green" id="logCountBadge">4 sample records</span>
+              </div>
+              <div class="table-responsive">
+                <table class="styled-table" id="trackerTable">
+                  <thead>
+                    <tr>
+                      <th>Food Item</th>
+                      <th>Category</th>
+                      <th>Qty (kg)</th>
+                      <th>Reason</th>
+                      <th>Location</th>
+                    </tr>
+                  </thead>
+                  <tbody id="trackerTableBody">
+                    <tr>
+                      <td><strong>Vegetable Biryani</strong></td>
+                      <td>Cooked Meals</td>
+                      <td><span class="qty-pill">14.0 kg</span></td>
+                      <td>Over-Preparation</td>
+                      <td>Hostel Dining 1</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Whole Wheat Breads</strong></td>
+                      <td>Bakery &amp; Pastry</td>
+                      <td><span class="qty-pill">8.5 kg</span></td>
+                      <td>Shelf Life Expiry</td>
+                      <td>Campus Bakery</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Dal Makhani &amp; Roti</strong></td>
+                      <td>Cooked Meals</td>
+                      <td><span class="qty-pill">19.0 kg</span></td>
+                      <td>Event Shortfall</td>
+                      <td>Auditorium Buffet</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Seasonal Mixed Fruit</strong></td>
+                      <td>Fresh Produce</td>
+                      <td><span class="qty-pill">6.0 kg</span></td>
+                      <td>Over-Preparation</td>
+                      <td>Faculty Cafeteria</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. DONATE SURPLUS FOOD SECTION -->
+    <section class="section section-donate" id="donate">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-kicker">Immediate Redistribution</span>
+          <h2 class="section-title">Donate Surplus Food</h2>
+          <p class="section-subtitle">
+            Have high-quality leftovers from your canteen, banquet, or restaurant? Fill out the pickup broadcast form below so local volunteer teams can dispatch a pickup.
+          </p>
+        </div>
+
+        <div class="donate-container">
+          <div class="donate-card">
+            <!-- Progress / Safety Banner -->
+            <div class="donate-banner-info">
+              <i class="fa-solid fa-circle-info"></i>
+              <span>
+                Please ensure food has been kept in hygienic containers and hot (>60°C) or cold (<4°C) prior to handover.
+              </span>
+            </div>
+
+            <form id="donationForm" class="styled-form" novalidate>
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <label for="donateFoodName"><i class="fa-solid fa-plate-wheat"></i> Surplus Food Name *</label>
+                  <input type="text" id="donateFoodName" name="donateFoodName" placeholder="e.g. Steamed Rice, Sambar &amp; Sabzi" required>
+                  <span class="form-error">Please mention the food items available.</span>
+                </div>
+                <div class="form-group col-6">
+                  <label for="donateQuantity"><i class="fa-solid fa-scale-balanced"></i> Quantity (kg or portions) *</label>
+                  <input type="text" id="donateQuantity" name="donateQuantity" placeholder="e.g. 25 kg (~60 portions)" required>
+                  <span class="form-error">Please specify the quantity.</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <label for="pickupLocation"><i class="fa-solid fa-map-pin"></i> Pickup Location &amp; Address *</label>
+                  <input type="text" id="pickupLocation" name="pickupLocation" placeholder="e.g. Grand Seasons Hotel, Gate 2, MG Road" required>
+                  <span class="form-error">Please provide a valid pickup location.</span>
+                </div>
+                <div class="form-group col-6">
+                  <label for="availableUntil"><i class="fa-regular fa-clock"></i> Available Until (Time / Date) *</label>
+                  <input type="datetime-local" id="availableUntil" name="availableUntil" required>
+                  <span class="form-error">Please specify how long food remains safe for pickup.</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-12">
+                  <label for="contactInfo"><i class="fa-solid fa-phone"></i> Contact Information (Name &amp; Phone / Email) *</label>
+                  <input type="text" id="contactInfo" name="contactInfo" placeholder="e.g. Chef Rajesh &bull; +91 98765 43210 &bull; kitchen@grandseasons.com" required>
+                  <span class="form-error">Please provide contact details for the pickup team.</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-12">
+                  <label for="dietaryNotes"><i class="fa-solid fa-comment-dots"></i> Packaging &amp; Dietary Notes (Optional)</label>
+                  <input type="text" id="dietaryNotes" name="dietaryNotes" placeholder="e.g. Packed in clean steel vessels. Pure vegetarian, prepared 2 hours ago.">
+                </div>
+              </div>
+
+              <!-- Inline success message placeholder -->
+              <div id="donationSuccessMessage" class="donation-success-banner" style="display: none;">
+                <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <div>
+                  <strong>Your surplus food has been listed for redistribution!</strong>
+                  <p>Local rescue teams have been notified. Keep an eye on your contact phone for pickup confirmation.</p>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-lg btn-block" id="btnSubmitDonation">
+                  <i class="fa-solid fa-hand-holding-heart"></i> Donate Food
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Active Rescue Broadcast Feed -->
+          <div class="donation-active-feed">
+            <div class="feed-header">
+              <h4><i class="fa-solid fa-tower-broadcast"></i> Active Community Rescue Board</h4>
+              <span class="badge badge-emerald">Live Prototype Feeds</span>
+            </div>
+            <div class="feed-list" id="activeDonationsFeed">
+              <!-- Item 1 -->
+              <div class="feed-card">
+                <div class="feed-card-header">
+                  <div class="feed-title-wrap">
+                    <h5>Paneer Butter Masala &amp; 80 Rotis</h5>
+                    <span class="feed-meta"><i class="fa-solid fa-location-dot"></i> City Convention Centre &bull; Safe until 11:30 PM</span>
+                  </div>
+                  <span class="badge badge-warning">Pickup Pending</span>
+                </div>
+                <div class="feed-card-footer">
+                  <span><i class="fa-solid fa-weight-scale"></i> 22 kg (~55 meals)</span>
+                  <button class="btn btn-xs btn-outline claim-demo-btn" onclick="claimDonation(this)">Claim for NGO</button>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="feed-card">
+                <div class="feed-card-header">
+                  <div class="feed-title-wrap">
+                    <h5>Assorted Breakfast Pastries &amp; Breads</h5>
+                    <span class="feed-meta"><i class="fa-solid fa-location-dot"></i> Le Petit Bakery, West Block &bull; Safe until 6:00 PM</span>
+                  </div>
+                  <span class="badge badge-success">Assigned to Robin Hood</span>
+                </div>
+                <div class="feed-card-footer">
+                  <span><i class="fa-solid fa-weight-scale"></i> 14 kg (~35 packs)</span>
+                  <span class="text-muted"><i class="fa-solid fa-van-shuttle"></i> Driver arriving</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FOOD SAFETY GUIDANCE SECTION -->
+    <section class="section section-safety" id="safety">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-kicker">Intelligent Pre-Screening</span>
+          <h2 class="section-title">Food Safety Assistant</h2>
+          <p class="section-subtitle">
+            Evaluating leftovers before redistribution protects dignity and health. Use this prototype assistant to check if your surplus meets redistribution hygiene criteria.
+          </p>
+        </div>
+
+        <div class="safety-grid">
+          <div class="safety-form-box">
+            <div class="box-header">
+              <i class="fa-solid fa-microscope text-emerald"></i>
+              <h3>Safety Evaluation Parameters</h3>
+            </div>
+            <form id="safetyAssistantForm" class="styled-form">
+              <div class="form-group">
+                <label for="safetyFoodType"><i class="fa-solid fa-drumstick-bite"></i> Food Type</label>
+                <select id="safetyFoodType" name="safetyFoodType" required>
+                  <option value="cooked-gravy">Cooked Rice, Gravies, Lentils &amp; Curries</option>
+                  <option value="raw-produce">Fresh Raw Fruits &amp; Whole Vegetables</option>
+                  <option value="bakery-dry">Bakery Breads, Buns &amp; Dry Cookies</option>
+                  <option value="cooked-meat">Cooked Meat, Poultry, Fish &amp; Seafood</option>
+                  <option value="dairy-custard">Dairy Sweets, Paneer &amp; Milk Dishes</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="safetyStorage"><i class="fa-solid fa-temperature-arrow-down"></i> Storage Condition</label>
+                <select id="safetyStorage" name="safetyStorage" required>
+                  <option value="hot-held">Hot-held (maintained above 60°C / 140°F)</option>
+                  <option value="refrigerated">Refrigerated quickly (below 4°C / 40°F)</option>
+                  <option value="ambient-covered">Room temperature &bull; Cleanly covered</option>
+                  <option value="ambient-open">Room temperature &bull; Open / Uncovered</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="safetyTime"><i class="fa-regular fa-hourglass-half"></i> Time Elapsed Since Preparation</label>
+                <select id="safetyTime" name="safetyTime" required>
+                  <option value="under-2">&lt; 2 hours (Freshly cooked / prepared)</option>
+                  <option value="2-to-4">2 – 4 hours</option>
+                  <option value="4-to-6">4 – 6 hours</option>
+                  <option value="over-6">&gt; 6 hours</option>
+                </select>
+              </div>
+
+              <button type="button" id="btnEvaluateSafety" class="btn btn-primary btn-block">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Evaluate Safety Status
+              </button>
+            </form>
+          </div>
+
+          <!-- Result Card Box -->
+          <div class="safety-result-box">
+            <div class="result-placeholder" id="safetyResultContainer">
+              <div class="result-badge-wrap">
+                <span class="safety-status-badge status-good" id="safetyBadge">
+                  <i class="fa-solid fa-circle-check"></i> Suitable for Redistribution
+                </span>
+              </div>
+              <h3 id="safetyHeadline">High Freshness Level</h3>
+              <p id="safetyExplanation" class="safety-desc">
+                Food has been held within safe temperature parameters and is well within the acceptable preparation window. Recommend packing into clean, food-grade containers immediately for pickup.
+              </p>
+
+              <div class="safety-checklist" id="safetyChecklist">
+                <div class="check-item"><i class="fa-solid fa-check text-success"></i> Sensory smell and texture check passed</div>
+                <div class="check-item"><i class="fa-solid fa-check text-success"></i> Time within critical 4-hour food safety window</div>
+                <div class="check-item"><i class="fa-solid fa-check text-success"></i> Safe to transfer to partner NGOs with covered transport</div>
+              </div>
+
+              <div class="safety-disclaimer">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span>
+                  <strong>Prototype Notice:</strong> This is an algorithmic prototype guidance feature based on standard HACCP temperature guidelines and does <em>not</em> constitute certified food inspection advice. Always exercise sensory judgment.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. IMPACT DASHBOARD -->
+    <section class="section section-impact" id="impact">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-kicker">Measurable Outcomes</span>
+          <h2 class="section-title">Impact Dashboard</h2>
+          <p class="section-subtitle">
+            See the direct environmental and community dividends generated across participating university hostels, food halls, and charitable partners.
+          </p>
+        </div>
+
+        <!-- 4 Primary Stat Cards -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-card-glow"></div>
+            <div class="stat-icon-wrapper color-green">
+              <i class="fa-solid fa-bowl-food"></i>
+            </div>
+            <div class="stat-number-box">
+              <h3 class="stat-number" data-target="250">0</h3>
+              <span class="stat-unit">kg</span>
+            </div>
+            <p class="stat-title">Food Saved</p>
+            <p class="stat-caption">Edible nutrition redirected from landfills to community plates.</p>
+            <div class="stat-progress-bar">
+              <div class="progress-fill fill-green" style="width: 82%;"></div>
+            </div>
+            <span class="stat-goal">82% of Monthly 300kg Target</span>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-glow"></div>
+            <div class="stat-icon-wrapper color-teal">
+              <i class="fa-solid fa-dumpster-fire"></i>
+            </div>
+            <div class="stat-number-box">
+              <h3 class="stat-number" data-target="180">0</h3>
+              <span class="stat-unit">kg</span>
+            </div>
+            <p class="stat-title">Waste Reduced</p>
+            <p class="stat-caption">Direct kitchen over-preparation curtailed through data feedback.</p>
+            <div class="stat-progress-bar">
+              <div class="progress-fill fill-teal" style="width: 75%;"></div>
+            </div>
+            <span class="stat-goal">75% Reduction vs Base Month</span>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-glow"></div>
+            <div class="stat-icon-wrapper color-amber">
+              <i class="fa-solid fa-truck-ramp-box"></i>
+            </div>
+            <div class="stat-number-box">
+              <h3 class="stat-number" data-target="75">0</h3>
+              <span class="stat-unit">donations</span>
+            </div>
+            <p class="stat-title">Surplus Donations</p>
+            <p class="stat-caption">Verified rapid handovers safely handled by local volunteers.</p>
+            <div class="stat-progress-bar">
+              <div class="progress-fill fill-amber" style="width: 88%;"></div>
+            </div>
+            <span class="stat-goal">Average pickup time: 38 mins</span>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-glow"></div>
+            <div class="stat-icon-wrapper color-rose">
+              <i class="fa-solid fa-people-roof"></i>
+            </div>
+            <div class="stat-number-box">
+              <h3 class="stat-number" data-target="420">0</h3>
+              <span class="stat-unit">meals</span>
+            </div>
+            <p class="stat-title">Estimated Meals Supported</p>
+            <p class="stat-caption">Warm meals served to night shelters, orphanages &amp; daily wage hubs.</p>
+            <div class="stat-progress-bar">
+              <div class="progress-fill fill-rose" style="width: 93%;"></div>
+            </div>
+            <span class="stat-goal">Direct SDG 2 Hunger Alleviation</span>
+          </div>
+        </div>
+
+        <!-- Visual Analytics Showcase (Pure CSS Bars & Breakdowns) -->
+        <div class="analytics-showcase">
+          <div class="analytics-card">
+            <div class="analytics-header">
+              <h4><i class="fa-solid fa-chart-column"></i> Weekly Redistribution Volume (kg)</h4>
+              <span class="badge badge-light">Last 7 Days</span>
+            </div>
+            <div class="bar-chart-container">
+              <div class="bar-col">
+                <div class="bar-track">
+                  <div class="bar-fill" style="height: 60%;" data-val="32 kg"></div>
+                </div>
+                <span class="bar-label">Mon</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-track">
+                  <div class="bar-fill" style="height: 45%;" data-val="24 kg"></div>
+                </div>
+                <span class="bar-label">Tue</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-track">
+                  <div class="bar-fill" style="height: 75%;" data-val="40 kg"></div>
+                </div>
+                <span class="bar-label">Wed</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-track">
+                  <div class="bar-fill" style="height: 50%;" data-val="28 kg"></div>
+                </div>
+                <span class="bar-label">Thu</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-track">
+                  <div class="bar-fill" style="height: 85%;" data-val="48 kg"></div>
+                </div>
+                <span class="bar-label">Fri</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-track">
+                  <div class="bar-fill highlight" style="height: 98%;" data-val="56 kg"></div>
+                </div>
+                <span class="bar-label">Sat</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-track">
+                  <div class="bar-fill" style="height: 70%;" data-val="38 kg"></div>
+                </div>
+                <span class="bar-label">Sun</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="analytics-card">
+            <div class="analytics-header">
+              <h4><i class="fa-solid fa-chart-pie"></i> Surplus Food Distribution by Category</h4>
+              <span class="badge badge-light">Cumulative %</span>
+            </div>
+            <div class="category-breakdown">
+              <div class="breakdown-row">
+                <div class="breakdown-info">
+                  <span>Cooked Meals (Rice, Curries, Rotis)</span>
+                  <strong>52%</strong>
+                </div>
+                <div class="meter-bar"><div class="meter-fill fill-green" style="width: 52%;"></div></div>
+              </div>
+              <div class="breakdown-row">
+                <div class="breakdown-info">
+                  <span>Bakery &amp; Baked Confections</span>
+                  <strong>24%</strong>
+                </div>
+                <div class="meter-bar"><div class="meter-fill fill-amber" style="width: 24%;"></div></div>
+              </div>
+              <div class="breakdown-row">
+                <div class="breakdown-info">
+                  <span>Fresh Produce (Vegetables &amp; Fruit)</span>
+                  <strong>16%</strong>
+                </div>
+                <div class="meter-bar"><div class="meter-fill fill-teal" style="width: 16%;"></div></div>
+              </div>
+              <div class="breakdown-row">
+                <div class="breakdown-info">
+                  <span>Dairy &amp; Packaged Staple Groceries</span>
+                  <strong>8%</strong>
+                </div>
+                <div class="meter-bar"><div class="meter-fill fill-rose" style="width: 8%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. PARTNER ORGANIZATIONS SECTION -->
+    <section class="section section-organizations" id="organizations">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-kicker">Community Network</span>
+          <h2 class="section-title">Partner Organizations</h2>
+          <p class="section-subtitle">
+            FoodGuard AI partners with verified local NGOs, shelter networks, and volunteer kitchens ready to accept surplus food collections.
+          </p>
+        </div>
+
+        <div class="org-filter-bar">
+          <button class="filter-pill active" data-filter="all">All Partners</button>
+          <button class="filter-pill" data-filter="cooked">Cooked Meals</button>
+          <button class="filter-pill" data-filter="packaged">Packaged / Bakery</button>
+          <button class="filter-pill" data-filter="urgent">Urgent Need</button>
+        </div>
+
+        <div class="org-grid">
+          <!-- Org 1 -->
+          <div class="org-card" data-category="cooked urgent">
+            <div class="org-badge-status urgent"><i class="fa-solid fa-bell"></i> Urgent Need</div>
+            <div class="org-header">
+              <div class="org-avatar color-emerald">
+                <i class="fa-solid fa-hands-holding-child"></i>
+              </div>
+              <div>
+                <h3 class="org-name">Robin Hood Army - City Chapter</h3>
+                <span class="org-location"><i class="fa-solid fa-location-dot"></i> Central Metro Region &bull; 2.4 km away</span>
+              </div>
+            </div>
+            <p class="org-desc">
+              Volunteer-driven grassroots collective serving surplus cooked dinners to homeless shelters and children's homes nightly.
+            </p>
+            <div class="org-accepted">
+              <span class="accepted-title">Accepted Categories:</span>
+              <div class="tags-row">
+                <span class="tag">Cooked Meals</span>
+                <span class="tag">Hot Curries</span>
+                <span class="tag">Chapatis / Bread</span>
+              </div>
+            </div>
+            <div class="org-actions">
+              <button class="btn btn-outline btn-block connect-org-btn" data-org="Robin Hood Army - City Chapter">
+                <i class="fa-solid fa-handshake"></i> Connect / Request Pickup
+              </button>
+            </div>
+          </div>
+
+          <!-- Org 2 -->
+          <div class="org-card" data-category="cooked">
+            <div class="org-badge-status ready"><i class="fa-solid fa-circle-check"></i> Active Today</div>
+            <div class="org-header">
+              <div class="org-avatar color-teal">
+                <i class="fa-solid fa-kitchen-set"></i>
+              </div>
+              <div>
+                <h3 class="org-name">Hope Community Kitchen</h3>
+                <span class="org-location"><i class="fa-solid fa-location-dot"></i> North Sector 4 &bull; 4.1 km away</span>
+              </div>
+            </div>
+            <p class="org-desc">
+              Dedicated soup kitchen providing midday and evening wholesome meals to migrant worker colonies and elderly day-care centres.
+            </p>
+            <div class="org-accepted">
+              <span class="accepted-title">Accepted Categories:</span>
+              <div class="tags-row">
+                <span class="tag">Cooked Rice / Dal</span>
+                <span class="tag">Fresh Produce</span>
+                <span class="tag">Cooked Meals</span>
+              </div>
+            </div>
+            <div class="org-actions">
+              <button class="btn btn-outline btn-block connect-org-btn" data-org="Hope Community Kitchen">
+                <i class="fa-solid fa-handshake"></i> Connect / Request Pickup
+              </button>
+            </div>
+          </div>
+
+          <!-- Org 3 -->
+          <div class="org-card" data-category="packaged">
+            <div class="org-badge-status ready"><i class="fa-solid fa-circle-check"></i> Active Today</div>
+            <div class="org-header">
+              <div class="org-avatar color-amber">
+                <i class="fa-solid fa-box-open"></i>
+              </div>
+              <div>
+                <h3 class="org-name">GreenHarvest Food Bank</h3>
+                <span class="org-location"><i class="fa-solid fa-location-dot"></i> South Industrial District &bull; 6.8 km away</span>
+              </div>
+            </div>
+            <p class="org-desc">
+              Warehousing facility equipped with temperature-regulated cold storage for bakery surpluses, dairy, and unopened packaged groceries.
+            </p>
+            <div class="org-accepted">
+              <span class="accepted-title">Accepted Categories:</span>
+              <div class="tags-row">
+                <span class="tag">Bakery Goods</span>
+                <span class="tag">Packaged Groceries</span>
+                <span class="tag">Raw Produce</span>
+              </div>
+            </div>
+            <div class="org-actions">
+              <button class="btn btn-outline btn-block connect-org-btn" data-org="GreenHarvest Food Bank">
+                <i class="fa-solid fa-handshake"></i> Connect / Request Pickup
+              </button>
+            </div>
+          </div>
+
+          <!-- Org 4 -->
+          <div class="org-card" data-category="cooked urgent">
+            <div class="org-badge-status urgent"><i class="fa-solid fa-bell"></i> High Demand</div>
+            <div class="org-header">
+              <div class="org-avatar color-rose">
+                <i class="fa-solid fa-heart-pulse"></i>
+              </div>
+              <div>
+                <h3 class="org-name">Annapurna Shelter Relief</h3>
+                <span class="org-location"><i class="fa-solid fa-location-dot"></i> Railway Colony East &bull; 3.2 km away</span>
+              </div>
+            </div>
+            <p class="org-desc">
+              Immediate community dining support providing evening meals to daily wage laborers, patients' attendants, and railway platforms.
+            </p>
+            <div class="org-accepted">
+              <span class="accepted-title">Accepted Categories:</span>
+              <div class="tags-row">
+                <span class="tag">Cooked Rice Dishes</span>
+                <span class="tag">Bakery Bread</span>
+                <span class="tag">Cooked Meals</span>
+              </div>
+            </div>
+            <div class="org-actions">
+              <button class="btn btn-outline btn-block connect-org-btn" data-org="Annapurna Shelter Relief">
+                <i class="fa-solid fa-handshake"></i> Connect / Request Pickup
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. SDG IMPACT SECTION -->
+    <section class="section section-sdg" id="sdg">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-kicker">United Nations Global Goals</span>
+          <h2 class="section-title">Supporting SDG 2 &amp; SDG 12</h2>
+          <p class="section-subtitle">
+            FoodGuard AI is architected from the ground up to advance the UN Sustainable Development Goals for food security and circular resource stewardship.
+          </p>
+        </div>
+
+        <div class="sdg-dual-cards">
+          <!-- SDG 2 -->
+          <div class="sdg-card sdg-2-theme">
+            <div class="sdg-header-strip">
+              <span class="sdg-badge-label">Goal 2</span>
+              <span class="sdg-official-tag">Zero Hunger</span>
+            </div>
+            <div class="sdg-body">
+              <div class="sdg-icon-large">
+                <i class="fa-solid fa-wheat-awn"></i>
+              </div>
+              <h3>SDG 2: Zero Hunger</h3>
+              <p class="sdg-description">
+                More usable, nutritious food is redirected from commercial kitchens directly to communities experiencing food vulnerability. By eliminating distribution friction, we ensure no good meal is trashed while a neighbour is in need.
+              </p>
+              <ul class="sdg-targets">
+                <li><i class="fa-solid fa-circle-check"></i> <strong>Target 2.1:</strong> Universal access to safe, nutritious and sufficient food year-round.</li>
+                <li><i class="fa-solid fa-circle-check"></i> <strong>Target 2.2:</strong> End all forms of malnutrition by bridging food inequality gaps.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- SDG 12 -->
+          <div class="sdg-card sdg-12-theme">
+            <div class="sdg-header-strip">
+              <span class="sdg-badge-label">Goal 12</span>
+              <span class="sdg-official-tag">Responsible Consumption</span>
+            </div>
+            <div class="sdg-body">
+              <div class="sdg-icon-large">
+                <i class="fa-solid fa-infinity"></i>
+              </div>
+              <h3>SDG 12: Responsible Consumption</h3>
+              <p class="sdg-description">
+                Reducing avoidable food waste drastically lowers unnecessary waste generation, conserves agricultural fresh water, and curtails toxic greenhouse gas emissions caused by organic breakdown in municipal landfills.
+              </p>
+              <ul class="sdg-targets">
+                <li><i class="fa-solid fa-circle-check"></i> <strong>Target 12.3:</strong> Halve per capita global food waste at retail and consumer levels by 2030.</li>
+                <li><i class="fa-solid fa-circle-check"></i> <strong>Target 12.5:</strong> Substantially reduce waste generation through prevention, reduction &amp; recycling.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Supporting Pillars Grid -->
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-trash-arrow-up"></i></div>
+            <h4>Reduced Food Waste</h4>
+            <p>Precise portion intelligence and waste root-cause logging enable institutions to cut future preparation overflow.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+            <h4>Better Resource Utilization</h4>
+            <p>Every kilogram saved preserves upstream irrigation water, harvesting fuel, electrical refrigeration, and labor.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-people-carry-box"></i></div>
+            <h4>Direct Community Support</h4>
+            <p>Fosters reliable, hyper-local mutual aid alliances between commercial canteens and charitable relief centers.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-bullhorn"></i></div>
+            <h4>Increased Awareness</h4>
+            <p>Empowers kitchen staff, campus students, and volunteers with transparent metrics and food-rescue pride.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. ABOUT FOODGUARD AI SECTION -->
+    <section class="section section-about" id="about">
+      <div class="container">
+        <div class="about-wrapper">
+          <div class="about-content">
+            <span class="section-kicker">Project Mission &amp; Architecture</span>
+            <h2 class="section-title">About FoodGuard AI</h2>
+            <blockquote class="about-lead-quote">
+              “FoodGuard AI is a prototype designed to reduce avoidable food waste by helping people track surplus food and connect it with redistribution opportunities.”
+            </blockquote>
+            <p>
+              Developed as a forward-thinking Computer Science engineering prototype, FoodGuard AI bridges the gap between commercial surplus generation and local hunger relief. Rather than treating surplus as waste management, FoodGuard treats it as a <strong>time-critical community asset</strong>.
+            </p>
+            <p>
+              Through automated waste tracking, intelligent temperature-time safety verification, and streamlined NGO pickup broadcasting, FoodGuard AI proves how lightweight, accessible web engineering can make tangible strides toward a zero-waste, zero-hunger future.
+            </p>
+
+            <div class="about-features-list">
+              <div class="about-feature">
+                <i class="fa-solid fa-shield-heart text-emerald"></i>
+                <div>
+                  <strong>Safety First</strong>
+                  <p>Algorithmic safety assistant verifies hot-hold and cold-chain parameters before redistribution.</p>
+                </div>
+              </div>
+              <div class="about-feature">
+                <i class="fa-solid fa-chart-line text-emerald"></i>
+                <div>
+                  <strong>Actionable Analytics</strong>
+                  <p>Real-time visual counters track meals rescued, kg diverted, and CO₂ offset.</p>
+                </div>
+              </div>
+              <div class="about-feature">
+                <i class="fa-solid fa-mobile-screen-button text-emerald"></i>
+                <div>
+                  <strong>Mobile-First &amp; Accessible</strong>
+                  <p>Ultra-responsive design built for busy kitchen supervisors on smartphones and tablets.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-diagram-box">
+            <div class="diagram-card">
+              <h4>How FoodGuard AI Works</h4>
+              <div class="workflow-steps">
+                <div class="workflow-step">
+                  <div class="step-num">1</div>
+                  <div class="step-details">
+                    <strong>Surplus Detected</strong>
+                    <p>Hostel, banquet, or restaurant logs excess edible portions in seconds.</p>
+                  </div>
+                </div>
+                <div class="workflow-step">
+                  <div class="step-num">2</div>
+                  <div class="step-details">
+                    <strong>AI Safety Verification</strong>
+                    <p>Parameters (time, storage, category) checked against safe hygiene windows.</p>
+                  </div>
+                </div>
+                <div class="workflow-step">
+                  <div class="step-num">3</div>
+                  <div class="step-details">
+                    <strong>Hyper-Local Broadcast</strong>
+                    <p>Verified NGOs within a 10 km radius receive instant pickup alerts.</p>
+                  </div>
+                </div>
+                <div class="workflow-step">
+                  <div class="step-num">4</div>
+                  <div class="step-details">
+                    <strong>Meals Distributed</strong>
+                    <p>Surplus reaches shelter homes; dashboard stats update in real time.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="student-credit-badge">
+                <i class="fa-solid fa-code"></i> Built with HTML5, Modern CSS3 &amp; Vanilla JavaScript
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 11. FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-col brand-col">
+          <div class="footer-logo">
+            <span class="logo-icon-wrap">
+              <i class="fa-solid fa-leaf"></i>
+              <span class="logo-shield"><i class="fa-solid fa-shield-halved"></i></span>
+            </span>
+            <span class="logo-text">FoodGuard <span class="logo-ai">AI</span></span>
+          </div>
+          <p class="footer-motto">
+            “Every meal saved is a step towards Zero Hunger.”
+          </p>
+          <div class="footer-sdg-pills">
+            <span class="footer-pill pill-sdg2"><i class="fa-solid fa-wheat-awn"></i> SDG 2: Zero Hunger</span>
+            <span class="footer-pill pill-sdg12"><i class="fa-solid fa-recycle"></i> SDG 12: Responsible Consumption</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Platform Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#tracker">Food Waste Tracker</a></li>
+            <li><a href="#donate">Donate Surplus Food</a></li>
+            <li><a href="#safety">Food Safety Assistant</a></li>
+            <li><a href="#impact">Impact Analytics</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Ecosystem &amp; SDGs</h4>
+          <ul class="footer-links">
+            <li><a href="#organizations">Partner NGOs</a></li>
+            <li><a href="#sdg">UN SDG 2 Target 2.1</a></li>
+            <li><a href="#sdg">UN SDG 12 Target 12.3</a></li>
+            <li><a href="#about">Project Architecture</a></li>
+            <li><a href="#safety">HACCP Safety Rules</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Redistribution Hotline (Demo)</h4>
+          <p class="footer-contact-text">
+            For urgent community meal pickups from colleges, banquets, and host institutions:
+          </p>
+          <div class="footer-hotline">
+            <i class="fa-solid fa-phone-volume"></i>
+            <span>+1 (800) FOOD-GUARD</span>
+          </div>
+          <small class="footer-demo-note">Prototype demo instance &bull; Open source for academic innovation.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 FoodGuard AI. All rights reserved. Save Food. Share Hope.</p>
+        <div class="footer-legal">
+          <span>CSE Innovation Project</span>
+          <span class="sep">&bull;</span>
+          <span>Responsive Web Application</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Connect Organization Modal -->
+  <div class="modal-backdrop" id="orgModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalOrgTitle"><i class="fa-solid fa-handshake text-emerald"></i> Connect with Organization</h3>
+        <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p id="modalOrgPrompt">Send an automated handover alert to this partner organization:</p>
+        <div class="modal-info-box">
+          <strong id="modalOrgName">Partner Organization</strong>
+          <p id="modalOrgAccepts">Accepted: Cooked Meals, Bakery, Fresh Produce</p>
+        </div>
+        <form id="connectOrgForm" class="styled-form">
+          <div class="form-group">
+            <label for="contactSender"><i class="fa-solid fa-user"></i> Your Facility / Representative Name</label>
+            <input type="text" id="contactSender" placeholder="e.g. Mess Secretary, Campus Hostel 3" required>
+          </div>
+          <div class="form-group">
+            <label for="contactPhone"><i class="fa-solid fa-phone"></i> Callback Phone Number</label>
+            <input type="tel" id="contactPhone" placeholder="e.g. +91 98765 00000" required>
+          </div>
+          <div class="form-group">
+            <label for="contactEstimated"><i class="fa-solid fa-box"></i> Estimated Surplus (kg / plates)</label>
+            <input type="text" id="contactEstimated" placeholder="e.g. 15 kg (~40 portions)" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            <i class="fa-solid fa-paper-plane"></i> Dispatch Handover Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
